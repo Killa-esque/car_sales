@@ -3,6 +3,7 @@ import { Layout } from 'antd';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './page.css';
 
 
 const layoutStyle = {
@@ -23,12 +24,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <>
-      <Header />
-      <main>
-        {children}
-      </main>
-      <Footer />
-    </>
+    <html lang='en'>
+      <body>
+        <Header />
+        <main>
+          {children}
+        </main>
+        <Footer />
+      </body>
+    </html>
   );
 }
