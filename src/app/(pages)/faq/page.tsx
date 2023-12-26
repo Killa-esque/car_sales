@@ -220,7 +220,7 @@ const FAQPage = (props: Props) => {
   return (
     <>
       <Row style={{ marginTop: 150, marginBottom: 150 }}>
-        <Col span={12} offset={6}>
+        <Col xs={{span: 22, offset: 1}} md={{span: 18, offset: 4}} xl={{span: 12, offset: 6}}>
           <h1 style={{ textAlign: 'center' }}>
             QUÝ KHÁCH THƯỜNG HỎI...
           </h1>
