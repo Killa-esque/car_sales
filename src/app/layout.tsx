@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './page.css';
+import Carousels from './components/Carousel';
 
 
 const layoutStyle = {
@@ -27,6 +28,7 @@ export default function RootLayout({
     <html lang='en'>
       <body>
         <Header />
+        <Carousels />
         <main>
           {children}
         </main>

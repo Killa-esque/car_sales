@@ -1,30 +1,28 @@
 import React from 'react'
 import { Carousel } from 'antd';
+import carousel from '../assets/css/carousel.module.css'
 
-const contentStyle: React.CSSProperties = {
-  height: '160px',
-  color: '#fff',
-  lineHeight: '160px',
-  textAlign: 'center',
-  background: '#364d79',
+const imageStyle: React.CSSProperties = {
+  width: "100%",
+  height: "700px",
+  objectFit: "cover",
+  objectPosition: "center",
 };
+
 
 type Props = {}
 
 const Carousels = (props: Props) => {
   return (
-    <Carousel autoplay>
+    <Carousel autoplay className={carousel['carousel']}>
       <div>
-        <h3 style={contentStyle}>1</h3>
+        <img className={carousel['carousel-image']} src="https://vwsaigon.vn/wp-content/uploads/2021/06/vw-saigon-gioi-thieu.jpg" alt="First Slide" style={imageStyle} />
       </div>
       <div>
-        <h3 style={contentStyle}>2</h3>
+        <img className={carousel['carousel-image']} src="https://vwsaigon.vn/wp-content/uploads/2023/08/RGB_Teramont_Ban-chay-nhat-phan-khuc2-3-min-1.png" alt="Second Slide" style={imageStyle} />
       </div>
       <div>
-        <h3 style={contentStyle}>3</h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}>4</h3>
+        <img className={carousel['carousel-image']} src="https://assets.volkswagen.com/is/image/volkswagenag/XCN_5636?Zml0PWNyb3AsMSZmbXQ9d2VicCZxbHQ9Nzkmd2lkPTE4MDAmaGVpPTEwMTMmYWxpZ249MC4wMCwwLjAwJmJmYz1vZmYmNWVkOA==" alt="Third Slide" style={imageStyle} />
       </div>
     </Carousel>
   )

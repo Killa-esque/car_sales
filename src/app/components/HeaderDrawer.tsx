@@ -1,5 +1,3 @@
-'use client'
-
 import React, { useState } from 'react';
 import { Drawer, Button, Menu, Input } from 'antd';
 import { MenuFoldOutlined, HomeOutlined, DollarOutlined, GiftOutlined, IeOutlined, SaveOutlined, QuestionOutlined, SubnodeOutlined, EyeOutlined, SearchOutlined } from '@ant-design/icons';
@@ -63,8 +61,6 @@ const items = [
 const HeaderDrawer = ({ name }: Props) => {
   const [visible, setVisible] = useState(false);
   const pathname = usePathname();
-
-  console.log(pathname)
 
   const showDrawer = () => {
     setVisible(true);

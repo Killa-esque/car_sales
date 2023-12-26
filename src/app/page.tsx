@@ -5,7 +5,6 @@ import { Row, Col } from 'antd';
 const Home = () => {
   return (
     <>
-      <Row><Col span={24}><Carousels>{/* Carousel content */}</Carousels></Col></Row>
       <Row><Col span={24}>{/* Promotion content */}</Col></Row>
       <Row><Col span={24}>{/* Home Delivery content */}</Col></Row>
       <Row><Col span={24}>{/* Product content */}</Col></Row>
