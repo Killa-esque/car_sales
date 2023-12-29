@@ -10,12 +10,21 @@ const imageStyle: React.CSSProperties = {
 };
 
 
-type Props = {}
+type Props = {
+  arrImg: string[]
+}
 
-const Carousels = (props: Props) => {
+const Carousels = ({ arrImg }: Props) => {
   return (
     <Carousel autoplay className={carousel['carousel']}>
-      <div>
+      {arrImg && arrImg.map((item, index) => {
+        return (
+          <div key={index}>
+            <img className={carousel['carousel-image']} src={item} alt="First Slide" style={imageStyle} />
+          </div>
+        )
+      })}
+      {/* <div>
         <img className={carousel['carousel-image']} src="https://vwsaigon.vn/wp-content/uploads/2021/06/vw-saigon-gioi-thieu.jpg" alt="First Slide" style={imageStyle} />
       </div>
       <div>
@@ -23,7 +32,7 @@ const Carousels = (props: Props) => {
       </div>
       <div>
         <img className={carousel['carousel-image']} src="https://assets.volkswagen.com/is/image/volkswagenag/XCN_5636?Zml0PWNyb3AsMSZmbXQ9d2VicCZxbHQ9Nzkmd2lkPTE4MDAmaGVpPTEwMTMmYWxpZ249MC4wMCwwLjAwJmJmYz1vZmYmNWVkOA==" alt="Third Slide" style={imageStyle} />
-      </div>
+      </div> */}
     </Carousel>
   )
 }

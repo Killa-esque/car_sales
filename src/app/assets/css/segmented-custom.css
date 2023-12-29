@@ -1,0 +1,15 @@
+/* .segmented-option {
+  width: 100px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow: visible;
+} */
+
+.ant-segmented {
+  width: 100%;
+}
+
+.ant-segmented-group {
+  max-width: 100%;
+  justify-content: space-between;
+}
