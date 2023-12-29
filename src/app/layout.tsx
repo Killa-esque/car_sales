@@ -4,6 +4,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './page.css';
+import Carousels from './components/Carousel';
+import { arrImageSlide } from './constant/home-carousel';
 
 
 const layoutStyle = {
@@ -27,6 +29,7 @@ export default function RootLayout({
     <html lang='en'>
       <body>
         <Header />
+        <Carousels arrImg={arrImageSlide} />
         <main>
           {children}
         </main>

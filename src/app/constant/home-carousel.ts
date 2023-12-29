@@ -1,0 +1,1 @@
+export const arrImageSlide = ['https://vwsaigon.vn/wp-content/uploads/2021/06/vw-saigon-gioi-thieu.jpg', 'https://vwsaigon.vn/wp-content/uploads/2023/08/RGB_Teramont_Ban-chay-nhat-phan-khuc2-3-min-1.png', 'https://assets.volkswagen.com/is/image/volkswagenag/XCN_5636?Zml0PWNyb3AsMSZmbXQ9d2VicCZxbHQ9Nzkmd2lkPTE4MDAmaGVpPTEwMTMmYWxpZ249MC4wMCwwLjAwJmJmYz1vZmYmNWVkOA==']
