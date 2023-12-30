@@ -15,9 +15,10 @@ const NewsDetailPage = async (props: Props) => {
     return (
         <>
             <Row style={{ marginTop: 20, marginBottom: 20 }}>
-                <Col xs={{ span: 22, offset: 1 }} md={{ span: 18, offset: 4 }} xl={{ span: 12, offset: 6 }}>
-                    <h2>Tóm tắt nội dung</h2>
+                <Col xs={{ span: 22, offset: 1 }} md={{ span: 2, offset: 2 }} xl={{ span: 3, offset: 3 }} style={{ marginTop: 50 }}>
                     <HeadersFromRichText content={news.content} />
+                </Col>
+                <Col xs={{ span: 22, offset: 1 }} md={{ span: 18 }} xl={{ span: 12 }}>
                     <div className='news__container'>
                         <RenderRichText content={news.content} />
                     </div>
