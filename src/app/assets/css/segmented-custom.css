@@ -5,11 +5,24 @@
   overflow: visible;
 } */
 
-.ant-segmented {
+/* .ant-segmented {
   width: 100%;
 }
 
 .ant-segmented-group {
   max-width: 100%;
   justify-content: space-between;
+} */
+
+.ant-row {
+  justify-content: center;
+}
+
+
+@media (max-width: 576px) {
+
+  /* Adjust breakpoint as needed */
+  .segmented-option .title {
+    display: none;
+  }
 }
