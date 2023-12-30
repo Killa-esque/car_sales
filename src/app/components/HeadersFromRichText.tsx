@@ -1,8 +1,6 @@
 import { BLOCKS } from '@contentful/rich-text-types';
-// import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { Content } from '@/app/type/ContentfulType';
 import { Anchor } from 'antd';
-// import { Col, Image, Row } from 'antd';
 import slugify from 'slugify'
 
 export function getPlainTextFromHeader(contentNode: any) {
@@ -13,8 +11,11 @@ export function getPlainTextFromHeader(contentNode: any) {
 
 function getHeadersFromRichText(richText: any) {
     const headers = (content: any) => content.nodeType === BLOCKS.HEADING_2
-
-    return richText.content.filter(headers).map((heading: any, index: any) => {
+    const res = [{
+        key: '0',
+        title: <b>Tóm tắt nội dung</b>,
+        href: `#tableOfContents`,
+    }].concat(richText.content.filter(headers).map((heading: any, index: any) => {
         const plainText = getPlainTextFromHeader(heading.content)
 
         return {
@@ -22,7 +23,9 @@ function getHeadersFromRichText(richText: any) {
             title: plainText,
             href: `#${slugify(plainText)}`,
         }
-    })
+    }))
+
+    return res;
 }
 
 
@@ -31,13 +34,17 @@ export type PropsType = {
 }
 
 const HeadersFromRichText = ({ content }: PropsType) => {
+
     return (
-        <Anchor
-            affix={false}
-            items={
-                getHeadersFromRichText(content.json)
-            }
-        />
+        <>
+            <Anchor
+                style={{ marginTop: 110 }}
+                targetOffset={100}
+                items={
+                    getHeadersFromRichText(content.json)
+                }
+            />
+        </>
     )
 }
 
