@@ -7,6 +7,12 @@ const nextConfig = {
                 hostname: 'volkswagenmiennam.com.vn',
                 port: ''
             },
+            {
+                protocol: 'https',
+                hostname: 'images.ctfassets.net',
+                port: '',
+                pathname: '/**'
+            }
         ]
     }
 }

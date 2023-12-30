@@ -1,10 +1,14 @@
 import React from 'react'
+import { getAllNews } from '@/lib/newsApi'
 
 type Props = {}
 
-const NewsPage = (props: Props) => {
+const NewsPage = async (props: Props) => {
+
+  const allNews : [] = await getAllNews();
+
   return (
-    <div>NewsPage</div>
+    <div>{allNews.length}</div>
   )
 }
 
