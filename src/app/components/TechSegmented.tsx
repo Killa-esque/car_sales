@@ -36,7 +36,7 @@ const TechSegmented = ({ arrImgTech }: Props) => {
     const optionStyle = {
       padding,
       display: 'flex',
-      flexDirection: 'column',
+      // flexDirection: 'column',
       alignItems: 'center',
     };
 
