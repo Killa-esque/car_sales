@@ -5,8 +5,17 @@ import { getNews } from '@/lib/newsApi'
 import './page.css'
 import { News } from '@/app/type/ContentfulType'
 import HeadersFromRichText from '@/app/components/HeadersFromRichText'
+import { Metadata, ResolvingMetadata } from 'next'
 
 type Props = { params: any }
+
+export async function generateMetadata(props: any): Promise<Metadata> {
+    const news: News = await getNews(props.params.slug)
+
+    return {
+        title: news.title,
+    }
+}
 
 const NewsDetailPage = async (props: Props) => {
 

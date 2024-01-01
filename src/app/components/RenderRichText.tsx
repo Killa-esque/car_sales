@@ -6,6 +6,13 @@ import { getPlainTextFromHeader } from './HeadersFromRichText';
 import slugify from 'slugify'
 
 function renderOptions(links: Links) {
+    // create an entry map
+    const entryMap = new Map();
+    // loop through the block linked entries and add them to the map
+    for (const entry of links.entries.block) {
+        entryMap.set(entry.sys.id, entry);
+    }
+
     // create an asset map
     const assetMap = new Map();
     // loop through the assets and add them to the map
@@ -45,6 +52,14 @@ function renderOptions(links: Links) {
                         </Col>
                     </Row>
                 );
+            },
+            [BLOCKS.EMBEDDED_ENTRY]: (node: any, next: any) => {
+                const entry = entryMap.get(node.data.target.sys.id);
+                console.log(entry);
+                
+                return (
+                    <></>
+                )
             }
         },
     };
