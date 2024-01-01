@@ -30,20 +30,19 @@ const TechSegmented = ({ arrImgTech }: Props) => {
     } else if (isTablet) {
       padding = '10px 25px'; // Medium padding for tablets
     } else {
-      padding = '12px'; // Larger padding for desktop
+      padding = '5px 12px'; // Larger padding for desktop
     }
-
     const optionStyle = {
       padding,
       display: 'flex',
-      // flexDirection: 'column',
+      flexDirection: 'column',
       alignItems: 'center',
     };
 
     return {
       label: (
         <div className='segmented-option' style={optionStyle}>
-          <Avatar src={item.url} />
+          <Avatar src={item.url} className='d-block' />
           {!(isPhone || isTablet) && <div className='title'>{item.title}</div>}
         </div>
       ),

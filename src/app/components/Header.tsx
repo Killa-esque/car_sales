@@ -1,7 +1,5 @@
 'use client'
 import React from 'react'
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
 import HeaderDrawer from './HeaderDrawer';
 import header from '../assets/css/header.module.css'
 import Link from 'next/link';
@@ -9,7 +7,7 @@ import Link from 'next/link';
 const Header = () => {
   return (
     <>
-      <Navbar key={'false'} expand={false} className="mb-3  fixed-top bg-transparent">
+      <div className="navbar mb-3 fixed-top bg-transparent">
         <div className='container-fluid'>
           <div className={header['header-left']}>
             <div className='btn-show-category-offcanvas'>
@@ -29,7 +27,7 @@ const Header = () => {
             <div className={header['line']}></div>
           </div>
         </div>
-      </Navbar>
+      </div>
     </>
   )
 }

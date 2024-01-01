@@ -124,6 +124,6 @@ export async function getProduct(
       isDraftMode
   );
   console.log(article)
-  // return extractProductsEntries(article)[0];
-  return ''
+  return extractProductsEntries(article)[0];
+  // return ''
 }

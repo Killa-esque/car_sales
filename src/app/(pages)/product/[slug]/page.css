@@ -1,0 +1,120 @@
+.about_page {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.about_page .container {
+  max-width: 1200px;
+  padding-right: 25px;
+  padding-left: 25px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.about_page .container .about-top {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.about_page .container .about-top .title {
+  font-size: 50px;
+  font-weight: bold;
+  color: #000;
+}
+
+.about_page .container .about-bottom .content-left .title {
+  font-size: 36px;
+  line-height: 44px;
+  color: #000;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.about_page .container .about-bottom .content-left .desc {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24.5px;
+  color: #000;
+  margin: 15px 0 35px 0;
+}
+
+.about_page .container .about-bottom .content-left .about-list {
+  list-style: none;
+  padding: 0;
+}
+
+.about_page .container .about-bottom .content-left .about-list .about-item {
+  font-size: 16px;
+  line-height: 26px;
+  color: #000;
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+.about_page .container .about-bottom .content-left .about-list .about-item span {
+  color: #dc4f72;
+  margin-right: 12px;
+  background: rgba(220, 79, 114, 0.1);
+  font-size: 10px;
+  padding: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.about_page .container .about-bottom .content-thumbnail img {
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+
+.about_page .container .about-bottom .content-thumbnail img:hover {
+  transform: translateY(-15px);
+}
+
+.brochure-left,
+.brochure-right {
+  width: 40%;
+}
+
+
+.brochure-middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+
+.brochure .title {
+  background-color: #001e50;
+  /* Blue background */
+  color: white;
+  /* White text */
+  padding: 10px 20px;
+  /* Padding for button size */
+  border-radius: 30px;
+  /* Rounded corners */
+  text-decoration: none;
+  /* Remove underline from link */
+  display: inline-block;
+  /* Make it inline-block for proper sizing */
+  transition: background-color 0.3s;
+  /* Smooth transition for hover effect */
+}
+
+.brochure .title:hover {
+  background-color: #0b3886;
+  /* Darker blue on hover */
+  cursor: pointer;
+  /* Cursor changes to pointer */
+}
+
+@media (max-width: 768px) {
+  .brochure .title {
+    padding: 8px 15px;
+    /* Smaller padding on smaller screens */
+    font-size: 14px;
+    /* Smaller font size on smaller screens */
+  }
+}
