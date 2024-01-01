@@ -11,11 +11,7 @@ export function getPlainTextFromHeader(contentNode: any) {
 
 function getHeadersFromRichText(richText: any) {
     const headers = (content: any) => content.nodeType === BLOCKS.HEADING_2
-    const res = [{
-        key: '0',
-        title: <b>Tóm tắt nội dung</b>,
-        href: `#tableOfContents`,
-    }].concat(richText.content.filter(headers).map((heading: any, index: any) => {
+    const res = richText.content.filter(headers).map((heading: any, index: any) => {
         const plainText = getPlainTextFromHeader(heading.content)
 
         return {
@@ -23,7 +19,7 @@ function getHeadersFromRichText(richText: any) {
             title: plainText,
             href: `#${slugify(plainText)}`,
         }
-    }))
+    })
 
     return res;
 }
@@ -37,9 +33,9 @@ const HeadersFromRichText = ({ content }: PropsType) => {
 
     return (
         <>
+            <h2>Tóm tắt nội dung</h2>
             <Anchor
-                style={{ marginTop: 110 }}
-                targetOffset={100}
+                affix={false}
                 items={
                     getHeadersFromRichText(content.json)
                 }

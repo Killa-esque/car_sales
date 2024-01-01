@@ -40,6 +40,31 @@ thumbnail {
 authorName
 `;
 
+const NEWS_PREVIEW_GRAPHQL_FIELDS = `
+sys {
+    id
+}
+contentfulMetadata {
+    tags {
+      id
+      name
+    }
+  }
+title
+slug
+summary
+authorName
+date
+thumbnail {
+    sys {
+      id
+    }
+    url
+    title
+    description
+}
+`
+
 async function fetchGraphQL(query, preview = false) {
     return fetch(
         `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
@@ -54,7 +79,8 @@ async function fetchGraphQL(query, preview = false) {
                     : process.env.CONTENTFUL_ACCESS_TOKEN
                     }`,
             },
-            body: JSON.stringify({ query })
+            body: JSON.stringify({ query }),
+            next: { tags: ["articles"] },
         }
     ).then((response) => response.json());
 }
@@ -65,7 +91,7 @@ function extractNewsEntries(fetchResponse) {
 
 export async function getAllNews(
     // For this demo set the default limit to always return 3 articles.
-    limit = 9,
+    limit = 6,
     skip = 0,
     // By default this function will return published content but will provide an option to
     // return draft content for reviewing articles before they are live
@@ -76,13 +102,14 @@ export async function getAllNews(
         newsCollection(where:{slug_exists: true}, skip: ${skip}, limit: ${limit}, preview: ${isDraftMode ? "true" : "false"
         }) {
           items {
-            ${NEWS_GRAPHQL_FIELDS}
+            ${NEWS_PREVIEW_GRAPHQL_FIELDS}
           }
+          total
         }
       }`,
         isDraftMode
     );
-    return extractNewsEntries(articles);
+    return { data: extractNewsEntries(articles), total: articles?.data?.newsCollection?.total };
 }
 
 export async function getNews(

@@ -22,12 +22,12 @@ export type Content = {
 }
 
 export interface Product extends Entry {
-    model: String;
-    slug: String;
-    price: String;
+    model: string;
+    slug: string;
+    price: string;
     overviewSection: [{
-        title: String;
-        content: String;
+        title: string;
+        content: string;
     }];
     colorsCollection: {
         items: [Media]
@@ -41,11 +41,11 @@ export interface Product extends Entry {
 }
 
 export interface News extends Entry {
-    title: String;
-    slug: String;
-    summary: String;
+    title: string;
+    slug: string;
+    summary: string;
     content: Content;
     date: Date;
     thumbnail: Media;
-    authorName: String;
+    authorName: string;
 }
