@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './page.css';
 import Carousels from './components/Carousel';
 import { arrImageSlide } from './constant/home-carousel';
+import Contact from './components/Contact';
 
 
 const layoutStyle = {
@@ -34,6 +35,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Contact />
       </body>
     </html>
   );

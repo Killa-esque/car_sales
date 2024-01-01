@@ -24,15 +24,6 @@ const Carousels = ({ arrImg }: Props) => {
           </div>
         )
       })}
-      {/* <div>
-        <img className={carousel['carousel-image']} src="https://vwsaigon.vn/wp-content/uploads/2021/06/vw-saigon-gioi-thieu.jpg" alt="First Slide" style={imageStyle} />
-      </div>
-      <div>
-        <img className={carousel['carousel-image']} src="https://vwsaigon.vn/wp-content/uploads/2023/08/RGB_Teramont_Ban-chay-nhat-phan-khuc2-3-min-1.png" alt="Second Slide" style={imageStyle} />
-      </div>
-      <div>
-        <img className={carousel['carousel-image']} src="https://assets.volkswagen.com/is/image/volkswagenag/XCN_5636?Zml0PWNyb3AsMSZmbXQ9d2VicCZxbHQ9Nzkmd2lkPTE4MDAmaGVpPTEwMTMmYWxpZ249MC4wMCwwLjAwJmJmYz1vZmYmNWVkOA==" alt="Third Slide" style={imageStyle} />
-      </div> */}
     </Carousel>
   )
 }

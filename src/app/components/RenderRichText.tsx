@@ -18,7 +18,17 @@ function renderOptions(links: Links) {
             [BLOCKS.HEADING_2]: (node: any, children: any) => {
                 const plainText = getPlainTextFromHeader(node.content)
 
-                return <h2 id={slugify(plainText)}>{children}</h2>
+                return <h2 className='text-center' id={slugify(plainText)}>{children}</h2>
+            },
+            [BLOCKS.HEADING_3]: (node: any, children: any) => {
+                const plainText = getPlainTextFromHeader(node.content)
+
+                return <h3 className='text-center' id={slugify(plainText)}>{children}</h3>
+            },
+            [BLOCKS.PARAGRAPH]: (node: any, children: any) => {
+                const plainText = getPlainTextFromHeader(node.content)
+
+                return <p className='text-center' id={slugify(plainText)}>{children}</p>
             },
             [BLOCKS.EMBEDDED_ASSET]: (node: any, next: any) => {
                 // find the asset in the assetMap by ID
