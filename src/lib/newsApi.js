@@ -26,6 +26,28 @@ content {
         description
       }
     }
+    entries{
+      block {
+        sys {
+          id
+        }
+        __typename
+        ... on ProductDetail {
+          title
+          content
+          imagesCollection(limit: 10) {
+            items {
+              sys {
+                id
+              }
+              title
+              url
+              description
+            }
+          }
+        }
+      }
+    }
   }
 }
 date
@@ -67,7 +89,7 @@ thumbnail {
 
 async function fetchGraphQL(query, preview = false) {
     return fetch(
-        `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
+        `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master`,
         {
             method: "POST",
             headers: {

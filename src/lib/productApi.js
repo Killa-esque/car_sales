@@ -27,6 +27,28 @@ const PRODUCT_GRAPHQL_FIELDS = `
         description
         }       
       }
+      entries {
+        block {
+          sys {
+            id
+          }
+          __typename
+          ... on ProductDetail {
+            title
+            content
+            imagesCollection(limit: 10) {
+              items {
+                sys {
+                  id
+                }
+                title
+                url
+                description
+              }
+            }
+          }
+        }
+      }
     }
   }
   brochure {

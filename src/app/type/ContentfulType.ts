@@ -13,6 +13,9 @@ export interface Media extends Entry {
 export type Links = {
     assets: {
         block: [Media]
+    },
+    entries: {
+        block: [ProductDetail]
     }
 }
 
@@ -48,4 +51,13 @@ export interface News extends Entry {
     date: Date;
     thumbnail: Media;
     authorName: string;
+}
+
+export interface ProductDetail extends Entry {
+    title: string,
+    content: [{
+        title: string,
+        description: string,
+    }]
+    imagesCollection: [Media]
 }
